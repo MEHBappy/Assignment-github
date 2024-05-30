@@ -1,30 +1,25 @@
-#include <stdio.h>
-int main()
-{
-  int array[100], search, c, n;
+#include<stdio.h>
 
-  printf("Enter number of elements in array\n");
-  scanf("%d", &n);
-
-  printf("Enter %d integer(s)\n", n);
-
-  for (c = 0; c < n; c++)
-    scanf("%d", &array[c]);
-
-  printf("Enter a number to search\n");
-  scanf("%d", &search);
-
-
-  for (c = 0; c < n; c++)
-  {
-    if (array[c] == search)    /* If required element is found */
+int main(){
+    int num[]={10,2,15,20,35,46,85};
+    int value,pos=-1,i;
+    printf("Enter the Value you want to Search : ");
+    scanf("%d",&value);
+    
+    for(i=0;i<7;i++)
     {
-      printf("%d is present at location %d.\n", search, c+1);
-      break;
+        if(value==num[i])
+        {
+            pos=i+1;
+            break;
+        }
     }
-  }
-  if (c == n)
-    printf("%d isn't present in the array.\n", search);
-
-  return 0;
+    if(pos==-1)
+    {
+        printf("Item is not found");
+        
+    }
+    else{
+        printf(" The valuee is found at position %d",pos);
+    }
 }
